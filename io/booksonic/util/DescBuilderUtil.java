@@ -66,8 +66,10 @@ public class DescBuilderUtil {
 					String line;
 					while ((line = br.readLine()) != null) {
 						if (startWriting) {
+							if(!line.startsWith("======")) {
 							bw.write(line);
 							bw.newLine();
+							}
 						}
 						if (line.contains("escription")) {
 							startWriting = true;
